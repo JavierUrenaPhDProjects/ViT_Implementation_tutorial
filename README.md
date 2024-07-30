@@ -35,4 +35,23 @@ The project is ready to be run by executing
 ```bash
 python scripts/main.py
 ```
-This will run a training and subsequent testing of a model defined in `config.py`. 
+This will run a training and subsequent testing of a model defined in `config.py`. You can change directly there different parameters
+like the learning rate, the number of epochs, if the model is pretrained or not...
+
+The `config.py` file is called at the beginning of `main.py` and is also prepared to parse arguments, so for example:
+```bash
+python scripts/main.py --model VisionTransformer 
+```
+will execute a training and testing of a ViT with the architecture hyperparameters configured in `config.py`. 
+On the other hand, doing
+```bash
+python scripts/main.py --model vit_768_12_12
+```
+will ignore the architecture hyperparameters in `config.py` and will apply the training and testing of vit_768_12_12 predefined
+model.
+
+As well as the model, you can also change all the other parsed arguments available in `config.py`, for example:
+```bash
+python scripts/main.py --model vit_768_12_12 --epochs 150 --lr 0.001 --dtype float64
+```
+
