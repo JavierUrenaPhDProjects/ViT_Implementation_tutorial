@@ -9,25 +9,24 @@ to follow the ViT pytorch implementation step by step.
 ## Getting Started
 
 The folder distribution of the project goes as:
+vision_transformer_project/
+│
+├── src/ # Source files for the transformer
+│ ├── init.py # Makes src a Python module
+│ └── vit_model.py # Vision Transformer model implementation
+│
+├── data/ # Dataset storage
+│ └── cifar10/ # CIFAR10 data files
+│
+├── notebooks/ # Jupyter notebooks for tutorials
+│ └── ViT_Implementation.ipynb
+│
+├── tests/ # Test scripts for the transformer
+│ ├── init.py
+│ └── test_vit_model.py
+│
+├── requirements.txt # Dependency file for reproducing the environment
+└── README.md # This file
 
-my_project/
-│
-├── src/                    # Source files
-│   ├── main.py             # Main application script
-│   └── helper.py           # Helper functions
-│
-├── tests/                  # Test files
-│   ├── test_main.py        # Tests for main application
-│   └── test_helper.py      # Tests for helper functions
-│
-├── data/                   # Data used by the project
-│   └── dataset.csv         # Sample dataset
-│
-├── docs/                   # Documentation files
-│   ├── README.md           # The project README file
-│   └── setup.md            # Setup instructions
-│
-├── requirements.txt        # Project dependencies
-└── .gitignore              # Specifies intentionally untracked files to ignore
 ```bash
 give examples
