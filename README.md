@@ -11,6 +11,7 @@ to follow the ViT pytorch implementation step by step.
 The folder distribution of the project goes as:
 
 - config_files
+  
 |_ config.py: 
 
 ```bash
