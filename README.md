@@ -9,7 +9,7 @@ to follow the ViT pytorch implementation step by step.
 ## Getting Started
 
 The folder distribution of the project goes as:
-``
+```
 ViT_tutorial/
 │
 ├── config_files/ # Project configuration files
@@ -30,7 +30,4 @@ ViT_tutorial/
 │ └── evaluation.py  # evaluation function definition. 
 │
 └── requirements.txt # Libraries necessary
-``
-
-```bash
-give examples
+```
