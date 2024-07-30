@@ -9,25 +9,28 @@ to follow the ViT pytorch implementation step by step.
 ## Getting Started
 
 The folder distribution of the project goes as:
-```
-vision_transformer_project/
+``
+ViT_tutorial/
 │
-├── src/ # Source files for the transformer
-│ ├── init.py # Makes src a Python module
-│ └── vit_model.py # Vision Transformer model implementation
+├── config_files/ # Project configuration files
+│ ├── init.py 
+│ └── config.py # Hyperparameters of the scripts. Here you change the necessary configurations for architecture and training
 │
-├── data/ # Dataset storage
-│ └── cifar10/ # CIFAR10 data files
+├── notebooks/ # Jupyter notebooks
+│ └── ViT_Tutorial.ipynb
 │
-├── notebooks/ # Jupyter notebooks for tutorials
-│ └── ViT_Implementation.ipynb
+├── models/
+│ └── ViT.py # Vision Transformer architecture implementation, together with the model definitions
 │
-├── tests/ # Test scripts for the transformer
-│ ├── init.py
-│ └── test_vit_model.py
+├── scripts/ # All python scripts that execute the whole project
+│ └── main.py        # main script. This one is what should be executed to do the training and testing of a model
+│ └── trainer.py     # definition of the 'Trainer' object that will execute the training
+│ └── tester.py      # definition of the 'Tester' object that will execute the testing
+│ └── dataloaders.py # Datasets and dataloaders creation script. Is configured so it loads CIFAR10
+│ └── evaluation.py  # evaluation function definition. 
 │
-├── requirements.txt # Dependency file for reproducing the environment
-└── README.md # This file
+└── requirements.txt # Libraries necessary
+``
 
 ```bash
 give examples
