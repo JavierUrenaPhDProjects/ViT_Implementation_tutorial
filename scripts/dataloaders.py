@@ -1,4 +1,5 @@
 from models.ViT import *
+import os
 import torch
 from torch.utils import data
 import matplotlib.pyplot as plt
@@ -60,14 +61,14 @@ def loadModel(args):
     model = eval(f'{model_name}({vars(args)})')
     device = args.device
     if args.pretrain:
-        ckpt_file = args.model_checkpoint
+        ckpt_file = os.path.join('trained_models', model_name, args.model_checkpoint)
         print(f'Loading pre-trained model of {model_name}. Checkpoint: {ckpt_file}')
 
         try:
             checkpoint = torch.load(ckpt_file, map_location=torch.device(device))
             model.load_state_dict(checkpoint, strict=False)
             model.to(device)
-            print(f"Model {model_name} loaded")
+            print(f"Checkpoint {ckpt_file} loaded")
         except FileNotFoundError:
             print(f'Checkpoint file {ckpt_file} not found. The model will be loaded from scratch!')
         except RuntimeError as e:

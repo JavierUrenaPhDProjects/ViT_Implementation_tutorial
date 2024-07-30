@@ -50,7 +50,7 @@ parser.add_argument('--epochs', default=150, type=int)
 parser.add_argument('--batch_size', default=128, type=int)
 parser.add_argument('--weight_decay', default=0.01, type=float)
 parser.add_argument('--pretrain', default=False, type=str2bool)
-parser.add_argument('--model_checkpoint', default='best_model.pth', type=str)
+parser.add_argument('--model_checkpoint', default='vit_256_6_8_30-07-2024.pth', type=str)
 
 ########### Dataset hyperparameters ###########
 parser.add_argument('--img_size', default=32, type=int)

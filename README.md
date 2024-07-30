@@ -23,6 +23,9 @@ ViT_tutorial/
 ├── models/
 │ └── ViT.py # Vision Transformer architecture implementation, together with the model definitions
 │
+├── trained_models/
+│ └── vit_256_6_8_30-07-2024.pth # a checkpoint of a pre-trained ViT
+│
 ├── scripts/ # All python scripts that execute the whole project
 │ └── main.py        # main script. This one is what should be executed to do the training and testing of a model
 │ └── trainer.py     # definition of the 'Trainer' object that will execute the training
@@ -58,4 +61,14 @@ As well as the model, you can also change all the other parsed arguments availab
 python scripts/main.py --model vit_768_12_12 --epochs 150 --lr 0.001 --dtype float64
 ```
 
-### Precautions
+### Loading pre-trained weights
+Pre-trained checkpoints files (denoted by the file type `.ckpt`) go under the folder of "trained_models". During training
+checkpoints of the best validation loss model will be stored under "trained_models/model_name/." under the name "model_date.pth".
+So for example if you want to load the weights of the model 'vit_256_6_8' trained in an specific date, then you should do:
+```bash
+python scripts/main.py --model vit_256_6_8 --pretrain y --model_checkpoint vit_256_6_8_30-07-2024.pth
+```
+
+This of course is not robust, as training the same model on the same day will remove the previous checkpoint.
+The program will try to find the checkpoint of that model inside of the models' folder in 'trained_model', since 
+**trained weights should fit the exact layers of the loading architecture**.
