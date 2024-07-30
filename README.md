@@ -32,6 +32,5 @@ ViT_tutorial/
 ```
 
 The project is ready to be run by executing
-`
-python scripts/main.py
-`
+
+`python scripts/main.py`
