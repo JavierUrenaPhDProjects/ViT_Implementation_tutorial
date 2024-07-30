@@ -1,24 +1,17 @@
-# Project Title
+# Vision Transformer implementation tutorial
 
-A brief description of what this project does and who it's for.
+### Description
 
-## Description
-
-Provide a longer description of the project here. What is the purpose of the project? What problems does it solve? How can users get started with the project?
-
-### Features
-
-- Feature 1
-- Feature 2
-- Feature 3
+This is my public repo for Vision Transformer implementation. Here you will have the scripts necessary for implementing,
+training and testing a vision transformer in the CIFAR10 dataset. This repo also comes with the original notebook file 
+to follow the ViT pytorch implementation step by step.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+The folder distribution of the project goes as:
 
-### Prerequisites
-
-What things you need to install the software and how to install them:
+- config_files
+    |- config.py: 
 
 ```bash
 give examples
