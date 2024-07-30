@@ -34,7 +34,7 @@ ViT_tutorial/
 ```
 
 ### Execution
-The project is ready to be run by executing
+The project is ready to be run by executing:
 ```bash
 python scripts/main.py
 ```
@@ -58,3 +58,4 @@ As well as the model, you can also change all the other parsed arguments availab
 python scripts/main.py --model vit_768_12_12 --epochs 150 --lr 0.001 --dtype float64
 ```
 
+### Precautions
