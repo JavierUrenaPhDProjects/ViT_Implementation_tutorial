@@ -34,3 +34,4 @@ ViT_tutorial/
 The project is ready to be run by executing
 ```bash
 python scripts/main.py
+```
