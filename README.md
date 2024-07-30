@@ -1,24 +1,35 @@
-# Project Title
+# Vision Transformer implementation tutorial
 
-A brief description of what this project does and who it's for.
+### Description
 
-## Description
-
-Provide a longer description of the project here. What is the purpose of the project? What problems does it solve? How can users get started with the project?
-
-### Features
-
-- Feature 1
-- Feature 2
-- Feature 3
+This is my public repo for Vision Transformer implementation. Here you will have the scripts necessary for implementing,
+training and testing a vision transformer in the CIFAR10 dataset. This repo also comes with the original notebook file 
+to follow the ViT pytorch implementation step by step.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+The folder distribution of the project goes as:
+```
+ViT_tutorial/
+│
+├── config_files/ # Project configuration files
+│ └── config.py # Hyperparameters of the scripts. Here you change the necessary configurations for architecture and training
+│
+├── notebooks/ # Jupyter notebooks
+│ └── ViT_Tutorial.ipynb
+│
+├── models/
+│ └── ViT.py # Vision Transformer architecture implementation, together with the model definitions
+│
+├── scripts/ # All python scripts that execute the whole project
+│ └── main.py        # main script. This one is what should be executed to do the training and testing of a model
+│ └── trainer.py     # definition of the 'Trainer' object that will execute the training
+│ └── tester.py      # definition of the 'Tester' object that will execute the testing
+│ └── dataloaders.py # Datasets and dataloaders creation script. Is configured so it loads CIFAR10
+│ └── evaluation.py  # evaluation function definition. 
+│
+└── requirements.txt # Libraries necessary
+```
 
-### Prerequisites
-
-What things you need to install the software and how to install them:
-
-```bash
-give examples
+The project is ready to be run by executing
+`python scripts/main.py`
