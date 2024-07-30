@@ -35,3 +35,4 @@ The project is ready to be run by executing
 ```bash
 python scripts/main.py
 ```
+This will run a training and subsequent testing of a model defined in `config.py`. 
