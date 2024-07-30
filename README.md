@@ -9,6 +9,7 @@ to follow the ViT pytorch implementation step by step.
 ## Getting Started
 
 The folder distribution of the project goes as:
+```
 vision_transformer_project/
 │
 ├── src/ # Source files for the transformer
