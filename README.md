@@ -7,7 +7,9 @@ training and testing a vision transformer in the CIFAR10 dataset. This repo also
 to follow the ViT pytorch implementation step by step.
 
 ## Getting Started
+First make sure you have all dependencies installed. This project runs in python3.10 so maybe create a virtual environment accordingly.
 
+### Project structure
 The folder distribution of the project goes as:
 ```
 ViT_tutorial/
@@ -31,6 +33,7 @@ ViT_tutorial/
 └── requirements.txt # Libraries necessary
 ```
 
+### Execution
 The project is ready to be run by executing
 ```bash
 python scripts/main.py
