@@ -21,17 +21,22 @@ ViT_tutorial/
 │ └── ViT_Tutorial.ipynb
 │
 ├── models/
-│ └── ViT.py # Vision Transformer architecture implementation, together with the model definitions
+│ └── ViT.py            # Vision Transformer architecture implementation, together with the model definitions
+│ └── ViT_attnVis.py    # Exact same as the other, but the models return attention maps
 │
-├── trained_models/
-│ └── vit_256_6_8_30-07-2024.pth # a checkpoint of a pre-trained ViT
+├── trained_models/ # Pre-trained model checkpoints
+│ └── vit_192_12_3
+│ │ └── vit_192_12_3_30-07-2024.pth 
+│ └── vit_256_6_8
+│   └── vit_256_6_8_30-07-2024.pth 
 │
 ├── scripts/ # All python scripts that execute the whole project
 │ └── main.py        # main script. This one is what should be executed to do the training and testing of a model
 │ └── trainer.py     # definition of the 'Trainer' object that will execute the training
 │ └── tester.py      # definition of the 'Tester' object that will execute the testing
 │ └── dataloaders.py # Datasets and dataloaders creation script. Is configured so it loads CIFAR10
-│ └── evaluation.py  # evaluation function definition. 
+│ └── evaluation.py  # evaluation function definition.
+│ └── attention_map_visualization.py  # Demo that shows attention maps of a random image 
 │
 └── requirements.txt # Libraries necessary
 ```
