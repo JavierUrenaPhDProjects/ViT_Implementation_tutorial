@@ -62,7 +62,7 @@ parser.add_argument('--dtype', default=select_dtype(dtype))
 
 ########### Model hyperparameters ###########
 parser.add_argument('--model', default='vit_256_6_8', type=str)
-parser.add_argument('--dropout', default=0.2, type=float)
+parser.add_argument('--dropout', default=0.1, type=float)
 parser.add_argument('--vit_dim', default=256, type=int)
 parser.add_argument('--vit_depth', default=6, type=int)
 parser.add_argument('--n_heads', default=8, type=int)

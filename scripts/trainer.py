@@ -8,7 +8,7 @@ from evaluation import evaluation
 
 
 class Trainer:
-    def __init__(self, model, train_loader, val_loader, args, patience=100):
+    def __init__(self, model, train_loader, val_loader, args, patience=50):
         self.args = args
         self.epochs = args.epochs
         self.lr = args.lr
@@ -18,7 +18,7 @@ class Trainer:
         self.optimizer = optim.AdamW(model.parameters(), lr=args.lr)
         self.train_loader, self.val_loader = train_loader, val_loader
         # self.lr_scheduler = optim.lr_scheduler.MultiStepLR(self.optimizer, milestones=[100, 200, 300, 400], gamma=0.1)
-        self.lr_scheduler = optim.lr_scheduler.ReduceLROnPlateau(self.optimizer, mode='min', factor=0.9, patience=10,
+        self.lr_scheduler = optim.lr_scheduler.ReduceLROnPlateau(self.optimizer, mode='min', factor=0.8, patience=5,
                                                                  min_lr=1e-7)
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -54,10 +54,13 @@ class Trainer:
         if not os.path.exists(os.path.join('trained_models', self.args.model)):
             os.mkdir(os.path.join('trained_models', self.args.model))
         if val_loss < self.best_loss:
+            self.tries = 0
             self.best_loss = val_loss
             torch.save(self.model.state_dict(), os.path.join('trained_models',
                                                              self.args.model,
                                                              f'{self.args.model}_{self.args.date}.pth'))
+        else:
+            self.tries += 1
 
     def run(self):
 

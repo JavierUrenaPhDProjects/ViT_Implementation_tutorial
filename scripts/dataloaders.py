@@ -9,8 +9,7 @@ from torchvision.datasets import CIFAR10
 from torchvision import transforms
 
 
-def get_transforms(norm_mean=[0.49139968, 0.48215841, 0.44653091],
-                   norm_std=[0.24703223, 0.24348513, 0.26158784]):
+def get_transforms(norm_mean=[0.49139968, 0.48215841, 0.44653091], norm_std=[0.24703223, 0.24348513, 0.26158784]):
     test_transform = transforms.Compose([transforms.ToTensor(),
                                          transforms.Normalize(norm_mean, norm_std)
                                          ])
@@ -26,16 +25,14 @@ def get_transforms(norm_mean=[0.49139968, 0.48215841, 0.44653091],
 
 def get_datasets(datapath='data', train_prcnt=0.9):
     train_transform, test_transform = get_transforms()
-    # Loading the training dataset. We need to split it into a training and validation part
-    # We need to do a little trick because the validation set should not use the augmentation.
-    train_dataset = CIFAR10(root=datapath, train=True, transform=train_transform, download=True)
-    val_dataset = CIFAR10(root=datapath, train=True, transform=test_transform, download=True)
+    dataset = CIFAR10(root=datapath, train=True, transform=train_transform, download=True)
 
-    train_size = int(len(train_dataset) * train_prcnt)
-    val_size = len(train_dataset) - train_size
+    train_size = int(len(dataset) * train_prcnt)
+    val_size = len(dataset) - train_size
 
-    train_set, _ = torch.utils.data.random_split(train_dataset, [train_size, val_size])
-    _, val_set = torch.utils.data.random_split(val_dataset, [train_size, val_size])
+    train_set, val_set = torch.utils.data.random_split(dataset, [train_size, val_size])
+    # we apply the test transformation so the validation does not have data augmentation
+    val_set.dataset.transform = test_transform
 
     # Loading the test set
     test_set = CIFAR10(root=datapath, train=False, transform=test_transform, download=True)

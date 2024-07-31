@@ -184,7 +184,7 @@ def vit_256_6_8(args):
                 depth=6,
                 heads=8,
                 mlp_factor=4,
-                dropout=0.2)
+                dropout=args['dropout'])
     return model
 
 
@@ -197,7 +197,7 @@ def vit_192_12_3(args):
                 depth=12,
                 heads=3,
                 mlp_factor=4,
-                dropout=0.1)
+                dropout=args['dropout'])
     return model
 
 
@@ -210,7 +210,7 @@ def vit_768_12_12(args):
                 depth=12,
                 heads=12,
                 mlp_factor=4,
-                dropout=0.1)
+                dropout=args['dropout'])
     return model
 
 
@@ -223,7 +223,7 @@ def vit_1024_24_16(args):
                 depth=24,
                 heads=16,
                 mlp_factor=4,
-                dropout=0.1)
+                dropout=args['dropout'])
     return model
 
 
