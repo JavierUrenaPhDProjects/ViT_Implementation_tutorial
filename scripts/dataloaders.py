@@ -1,4 +1,5 @@
 from models.ViT import *
+from models.ViT_attnVis import *
 import os
 import torch
 from torch.utils import data
@@ -61,11 +62,15 @@ def loadModel(args):
     model = eval(f'{model_name}({vars(args)})')
     device = args.device
     if args.pretrain:
+
+        if '_attnVis' in model_name:
+            model_name = model_name.replace('_attnVis', '')
+
         ckpt_file = os.path.join('trained_models', model_name, args.model_checkpoint)
         print(f'Loading pre-trained model of {model_name}. Checkpoint: {ckpt_file}')
 
         try:
-            checkpoint = torch.load(ckpt_file, map_location=torch.device(device))
+            checkpoint = torch.load(ckpt_file, map_location=torch.device(device), weights_only=True)
             model.load_state_dict(checkpoint, strict=False)
             model.to(device)
             print(f"Checkpoint {ckpt_file} loaded")

@@ -49,7 +49,7 @@ parser.add_argument('--lr_scheduler', default=True, type=str2bool)
 parser.add_argument('--epochs', default=150, type=int)
 parser.add_argument('--batch_size', default=128, type=int)
 parser.add_argument('--weight_decay', default=0.01, type=float)
-parser.add_argument('--pretrain', default=False, type=str2bool)
+parser.add_argument('--pretrain', default=True, type=str2bool)
 parser.add_argument('--model_checkpoint', default='vit_256_6_8_30-07-2024.pth', type=str)
 
 ########### Dataset hyperparameters ###########
@@ -61,7 +61,7 @@ dtype = parser.parse_known_args()[0].data_type
 parser.add_argument('--dtype', default=select_dtype(dtype))
 
 ########### Model hyperparameters ###########
-parser.add_argument('--model', default='VisionTransformer', type=str)
+parser.add_argument('--model', default='vit_256_6_8', type=str)
 parser.add_argument('--dropout', default=0.2, type=float)
 parser.add_argument('--vit_dim', default=256, type=int)
 parser.add_argument('--vit_depth', default=6, type=int)

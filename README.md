@@ -72,3 +72,4 @@ python scripts/main.py --model vit_256_6_8 --pretrain y --model_checkpoint vit_2
 This of course is not robust, as training the same model on the same day will remove the previous checkpoint.
 The program will try to find the checkpoint of that model inside of the models' folder in 'trained_model', since 
 **trained weights should fit the exact layers of the loading architecture**.
+

@@ -2,6 +2,7 @@ from torchmetrics import Accuracy
 from tqdm import tqdm
 import torch
 
+
 def evaluation(model, val_loader, loss_fn):
     """
     Evaluates a classification model measuring its accuracy and average loss
