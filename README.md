@@ -28,7 +28,9 @@ ViT_tutorial/
 │ └── vit_192_12_3
 │ │ └── vit_192_12_3_30-07-2024.pth 
 │ └── vit_256_6_8
-│   └── vit_256_6_8_30-07-2024.pth 
+│ │ └── vit_256_6_8_30-07-2024.pth 
+│ │ 
+│ └── best_256_6_8.pth
 │
 ├── scripts/ # All python scripts that execute the whole project
 │ └── main.py        # main script. This one is what should be executed to do the training and testing of a model
