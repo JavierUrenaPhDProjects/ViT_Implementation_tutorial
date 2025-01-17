@@ -121,7 +121,7 @@ class Transformer(nn.Module):
         for attn, ff in self.layers:
             x = attn(x) + x  # skip connection 1
             x = ff(x) + x  # skip connection 2
-            return x
+        return x
 
 
 class ViT(nn.Module):
